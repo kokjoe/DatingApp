@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 
 @Injectable()
-export class MemberListResolver implements Resolve<User[]>{
+export class MemberListResolver implements Resolve<User[]> {
     constructor(private userService: UserService, private router: Router, private alertify: AlertifyService) {}
 
     resolve(route: ActivatedRouteSnapshot): Observable<User[]> {
@@ -17,6 +17,6 @@ export class MemberListResolver implements Resolve<User[]>{
                 this.router.navigate(['/home']);
                 return of(null);
             })
-        )
+        );
     }
 }
